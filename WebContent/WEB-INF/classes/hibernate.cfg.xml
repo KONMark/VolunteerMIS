@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+  <property name="hibernate.connection.password">123456</property>
+  <property name="hibernate.connection.url">jdbc:oracle:thin:@//175.178.170.246:1521/ORCLPDB</property>
+  <property name="hibernate.connection.username">system</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+  <property name="hibernate.c3p0.max_size">5</property>
+  <property name="hibernate.c3p0.min_size">2</property>
+  <property name="hibernate.c3p0.timeout">10000</property>
+  <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.format_sql">true</property>
+  <property name="hibernate.generate_statistics">false</property>
+  <mapping resource="com/demo/entity/Member.hbm.xml"/>
+  <mapping resource="com/demo/entity/VolunteerInfo.hbm.xml"/>
+  <mapping resource="com/demo/entity/ActivityInfo.hbm.xml"/>
+  <mapping resource="com/demo/entity/ApplyList.hbm.xml"/>
+  <mapping resource="com/demo/entity/News.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

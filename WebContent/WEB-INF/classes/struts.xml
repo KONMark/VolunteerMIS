@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+    <struts>  
+    	<constant name="struts.objectFactory" value="spring"/>
+
+		<package name="Member" namespace="/" extends="struts-default">
+			<action name="MemberServlet_memberlogin" class="MemberAction" method="memberlogin">
+				<result name="SUCCESS" type="dispatcher">/member-welcome.jsp</result>
+				<result name="INPUT" type="dispatcher">/login.jsp</result>
+			</action>
+			<action name="MemberServlet_adminlogin" class="MemberAction" method="adminlogin">
+				<result name="SUCCESS" type="dispatcher">/admin-welcome.jsp</result>
+				<result name="INPUT" type="dispatcher">/admin-login.jsp</result>
+			</action>
+			<action name="MemberServlet_register" class="MemberAction" method="register">
+				<result name="SUCCESS" type="dispatcher">/register.jsp</result>
+				<result name="INPUT" type="dispatcher">/register.jsp</result>
+			</action>
+			<action name="MemberServlet_updatepassword" class="MemberAction" method="updatepassword">
+				<result name="SUCCESS" type="dispatcher">/rewrite.jsp</result>
+			</action>
+			<action name="MemberServlet_selectallmember" class="MemberAction" method="selectallmember">
+				<result name="SUCCESS" type="dispatcher">/list-member.jsp</result>
+			</action>
+			<action name="MemberServlet_selectallmembers" class="MemberAction" method="selectallmember2">
+				<result name="SUCCESS" type="dispatcher">/list-register.jsp</result>
+			</action>
+			<action name="MemberServlet_selectmymember" class="MemberAction" method="selectmymember">
+				<result name="SUCCESS" type="dispatcher">/list-mymember.jsp</result>
+			</action>
+			<action name="MemberServlet_zero" class="MemberAction" method="zero">
+				<result name="SUCCESS" type="dispatcher">/list-register.jsp</result>
+			</action>
+			<action name="MemberServlet_delete" class="MemberAction" method="delete">
+				<result name="SUCCESS" type="dispatcher">/list-register.jsp</result>
+			</action>
+			<action name="MemberServlet_detail" class="MemberAction" method="detail">
+				<result name="SUCCESS" type="dispatcher">/list-mymember-detail.jsp</result>
+			</action>
+			<action name="MemberServlet_submit" class="MemberAction" method="submit">
+				<result name="SUCCESS" type="dispatcher">/list-mymember-detail.jsp</result>
+			</action>
+
+
+			<action name="VolunteerServlet_add" class="VolunteerAction" method="addVounteerInfo">
+				<result name="SUCCESS" type="dispatcher">/addvolunteer.jsp</result>
+				<result name="INPUT" type="dispatcher">/addvolunteer.jsp</result>
+			</action>
+			<action name="VolunteerServlet_select" class="VolunteerAction" method="selectallvolunteer">
+				<result name="SUCCESS" type="dispatcher">/list-volunteerinfo-manage.jsp</result>
+			</action>
+			<action name="VolunteerServlet_select2" class="VolunteerAction" method="selectallvolunteer2">
+				<result name="SUCCESS" type="dispatcher">/list-volunteerinfo.jsp</result>
+			</action>
+			<action name="VolunteerServlet_delete" class="VolunteerAction" method="deletevolunteer">
+				<result name="SUCCESS" type="dispatcher">list-volunteerinfo-manage.jsp</result>
+			</action>
+			
+			
+			<action name="ActivityServlet_send" class="ActivityAction" method="send">
+				<result name="SUCCESS" type="dispatcher">/send.jsp</result>
+			</action>
+			<action name="ActivityServlet_sendActivity" class="ActivityAction" method="sendActivity">
+				<result name="SUCCESS" type="dispatcher">/send.jsp</result>
+				<result name="INPUT" type="dispatcher">/send.jsp</result>
+			</action>
+			<action name="ActivityServlet_select1" class="ActivityAction" method="selectallactivity">
+				<result name="SUCCESS" type="dispatcher">/list-activity.jsp</result>
+			</action>
+			<action name="ActivityServlet_select2" class="ActivityAction" method="selectallactivity">
+				<result name="SUCCESS" type="dispatcher">/list-activity-manage.jsp</result>
+			</action>
+			<action name="ActivityServlet_detail" class="ActivityAction" method="detail">
+				<result name="SUCCESS" type="dispatcher">/list-activity-detail.jsp</result>
+			</action>
+			<action name="ActivityServlet_end" class="ActivityAction" method="end">
+				<result name="SUCCESS" type="dispatcher">/list-activity-manage.jsp</result>
+			</action>
+			<action name="ActivityServlet_delete" class="ActivityAction" method="delete">
+				<result name="SUCCESS" type="dispatcher">/list-activity-manage.jsp</result>
+			</action>
+			<action name="ActivityServlet_condition" class="ActivityAction" method="selectcondition">
+				<result name="SUCCESS" type="dispatcher">/list-activity.jsp</result>
+			</action>
+			
+			
+			<action name="ApplyServlet_selectall" class="ApplyAction" method="selectall">
+				<result name="SUCCESS" type="dispatcher">/list-apply.jsp</result>
+			</action>
+			<action name="ApplyServlet_selectme" class="ApplyAction" method="selectme">
+				<result name="SUCCESS" type="dispatcher">/list-myapplylist.jsp</result>
+			</action>
+			<action name="ApplyServlet_toaddapply" class="ApplyAction" method="toaddapply">
+				<result name="SUCCESS" type="dispatcher">/addapply.jsp</result>
+			</action>
+			<action name="ApplyServlet_apply" class="ApplyAction" method="apply">
+				<result name="SUCCESS" type="dispatcher">/addapply.jsp</result>
+			</action>
+			<action name="ApplyServlet_yes" class="ApplyAction" method="yes">
+				<result name="SUCCESS" type="dispatcher">/list-apply.jsp</result>
+			</action>
+			<action name="ApplyServlet_no" class="ApplyAction" method="no">
+				<result name="SUCCESS" type="dispatcher">/list-apply.jsp</result>
+			</action>
+			<action name="ApplyServlet_updateasign" class="ApplyAction" method="updateasign">
+				<result name="SUCCESS" type="dispatcher">/list-myapplylist.jsp</result>
+			</action>
+			<action name="ApplyServlet_cancelasign" class="ApplyAction" method="cancelasign">
+				<result name="SUCCESS" type="dispatcher">/list-myapplylist.jsp</result>
+			</action>
+			<action name="ApplyServlet_feedback" class="ApplyAction" method="feedback">
+				<result name="SUCCESS" type="dispatcher">/list-news.jsp</result>
+			</action>
+			<action name="ApplyServlet_exchange" class="ApplyAction" method="exchange">
+				<result name="SUCCESS" type="dispatcher">/exchange.jsp</result>
+			</action>
+			<action name="ApplyServlet_delete" class="ApplyAction" method="delete">
+				<result name="SUCCESS" type="dispatcher">/list-apply.jsp</result>
+			</action>
+			
+			
+			<action name="NewsServlet_add" class="NewsAction" method="add">
+				<result name="SUCCESS" type="dispatcher">/addnews.jsp</result>
+			</action>
+			<action name="NewsServlet_select" class="NewsAction" method="select">
+				<result name="SUCCESS" type="dispatcher">/list-news.jsp</result>
+			</action>
+			<action name="NewsServlet_update" class="NewsAction" method="update">
+				<result name="SUCCESS" type="dispatcher">/addnews.jsp</result>
+			</action>
+			
+		</package>
+		
+
+    </struts>  

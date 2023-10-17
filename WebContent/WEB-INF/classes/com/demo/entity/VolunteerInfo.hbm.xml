@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-8-10 15:23:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.entity.VolunteerInfo" table="VOLUNTEERINFO">
+        <id name="vno" type="java.lang.String">
+            <column name="VNO" />
+            <generator class="assigned" />
+        </id>
+        <property name="vname" type="java.lang.String">
+            <column name="VNAME" />
+        </property>
+        <property name="vtime" type="java.lang.String">
+            <column name="VTIME" />
+        </property>
+        <property name="vposition" type="java.lang.String">
+            <column name="VPOSITION" />
+        </property>
+        <property name="vpeople" type="int">
+            <column name="VPEOPLE" />
+        </property>
+        <property name="vduration" type="int">
+            <column name="VDURATION" />
+        </property>
+        <property name="vcontext" type="java.lang.String">
+            <column name="VCONTEXT" />
+        </property>
+    </class>
+</hibernate-mapping>

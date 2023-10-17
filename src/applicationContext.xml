@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    	<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+    </bean>
+    
+    <bean id="memberDAO" class="com.demo.dao.dao.MemberDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="memberService" class="com.demo.service.ebo.MemberServiceImpl">
+    	<property name="mdao" ref="memberDAO"></property>
+    </bean>
+    <bean id="MemberAction" class="com.demo.action.MemberAction" scope="prototype">
+    	<property name="ms" ref="memberService"></property>
+    	<property name="aps" ref="applyService"></property>
+    </bean>
+    
+
+    <bean id="volunteerDAO" class="com.demo.dao.dao.VolunteerDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="volunteerService" class="com.demo.service.ebo.VolunteerServiceImpl">
+    	<property name="vdao" ref="volunteerDAO"></property>
+    </bean>
+    <bean id="VolunteerAction" class="com.demo.action.VolunteerAction" scope="prototype">
+    	<property name="vs" ref="volunteerService"></property>
+    </bean>   
+    
+    
+    
+    
+
+    <bean id="activityDAO" class="com.demo.dao.dao.ActivityDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="activityService" class="com.demo.service.ebo.ActivityServiceImpl">
+    	<property name="acdao" ref="activityDAO"></property>
+    </bean>
+    <bean id="ActivityAction" class="com.demo.action.ActivityAction" scope="prototype">
+    	<property name="acs" ref="activityService"></property>
+    	<property name="ns" ref="newsService"></property>
+    </bean>
+    
+    
+    <bean id="applyDAO" class="com.demo.dao.dao.ApplyDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="applyService" class="com.demo.service.ebo.ApplyServiceImpl">
+    	<property name="apdao" ref="applyDAO"></property>
+    </bean>
+    <bean id="ApplyAction" class="com.demo.action.ApplyAction" scope="prototype">
+    	<property name="aps" ref="applyService"></property>
+    	<property name="ms" ref="memberService"></property>
+    	<property name="acs" ref="activityService"></property>
+    	<property name="ns" ref="newsService"></property>
+    </bean>
+    
+    
+
+    <bean id="newsDAO" class="com.demo.dao.dao.NewsDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <bean id="newsService" class="com.demo.service.ebo.NewsServiceImpl">
+    	<property name="ndao" ref="newsDAO"></property>
+    </bean>
+    <bean id="NewsAction" class="com.demo.action.NewsAction" scope="prototype">
+    	<property name="ns" ref="newsService"></property>
+    	<property name="aps" ref="applyService"></property>
+    	<property name="acs" ref="activityService"></property>
+    </bean>
+
+</beans>

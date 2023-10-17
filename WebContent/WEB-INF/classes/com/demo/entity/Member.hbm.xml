@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-8-9 20:53:52 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.demo.entity.Member" table="MEMBER">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="depart" type="java.lang.String">
+            <column name="DEPART" />
+        </property>
+        <property name="duty" type="java.lang.String">
+            <column name="DUTY" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="tele" type="java.lang.String">
+            <column name="TELE" />
+        </property>
+        <property name="mclass" type="java.lang.String" access="field">
+            <column name="MCLASS" />
+        </property>
+        <property name="wechat" type="java.lang.String">
+            <column name="WECHAT" />
+        </property>
+        <property name="birth" type="java.lang.String">
+            <column name="BIRTH" />
+        </property>
+        <property name="join_num" type="int">
+            <column name="JOIN_NUM" />
+        </property>
+        <property name="join_time" type="int">
+            <column name="JOIN_TIME" />
+        </property>
+        <property name="dorm" type="java.lang.String">
+            <column name="DORM" />
+        </property>
+    </class>
+</hibernate-mapping>
